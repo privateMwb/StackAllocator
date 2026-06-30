@@ -18,7 +18,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 
 # ============================================================================
-# FunctionPro (Header-only Library)
+# StackPro (Header-only Library)
 # ============================================================================
 
 # Define the header-only StackPro library.
