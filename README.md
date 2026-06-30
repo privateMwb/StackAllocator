@@ -526,10 +526,15 @@ StackAllocator/
 │       ├── Stack.h
 │       ├── Stack.tpp
 │       └── StackScope.h
+│
 ├── tests/
 ├── benchmarks/
 ├── examples/
+│
 ├── cmake/
+│   └── StackProConfig.cmake.in
+│
+├── .gitignore
 ├── CMakeLists.txt
 ├── README.md
 └── LICENSE
