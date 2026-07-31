@@ -143,7 +143,7 @@ inline void doNotOptimize() {
 
 // Prints a horizontal separator line.
 inline void borderLine() {
-    std::cout << GRAY << std::string(90, '-') << RESET << "\n";
+    std::cout << GRAY << std::string(103, '-') << RESET << "\n";
 }
 
 // Prints a 3-column table header for benchmarks with no reference
@@ -154,7 +154,7 @@ inline void setSoloHeader(std::string_view header) {
 
     // clang-format off
     std::cout << std::left << CYAN 
-              << std::setw(30) << prettify(header) 
+              << std::setw(40) << prettify(header) 
               << std::setw(15) << "Iteration" 
               << std::setw(15) << custom 
               << RESET << "\n";
@@ -172,7 +172,7 @@ inline void setSoloHeader(std::string_view header) {
 inline void printSoloRow(std::string_view name, std::string_view iteration, nanoseconds ns) {
     // clang-format off
     std::cout << std::left 
-              << std::setw(30) << prettify(name) 
+              << std::setw(40) << prettify(name) 
               << std::setw(15) << iteration
               << std::setw(15) << formatDuration(ns) 
               << std::setw(20) << "     —" 
@@ -192,7 +192,7 @@ inline void setHeader(std::string_view header) {
 
     // clang-format off
     std::cout << std::left << CYAN 
-              << std::setw(30) << prettify(header) 
+              << std::setw(40) << prettify(header) 
               << std::setw(15) << "Iteration" 
               << std::setw(15) << custom 
               << std::setw(20) << standard
@@ -229,7 +229,7 @@ inline void printComparisonRow(std::string_view name, std::string_view iteration
 
     // clang-format off
     std::cout << std::left 
-              << std::setw(30) << prettify(name) 
+              << std::setw(40) << prettify(name) 
               << std::setw(15) << iteration
               << std::setw(15) << formatDuration(customNs) 
               << std::setw(20) << formatDuration(stdNs)
