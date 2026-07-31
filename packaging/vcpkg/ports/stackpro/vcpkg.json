@@ -1,0 +1,11 @@
+{
+  "name": "stackpro",
+  "version": "1.0.0",
+  "description": "High-performance, header-only linear (stack) allocator with O(1) allocate/reset/rollback, backed by a single bump-pointer buffer with marker-based checkpoints.",
+  "homepage": "https://github.com/privateMwb/StackAllocator",
+  "license": "MIT",
+  "dependencies": [
+    "vcpkg-cmake",
+    "vcpkg-cmake-config"
+  ]
+}
