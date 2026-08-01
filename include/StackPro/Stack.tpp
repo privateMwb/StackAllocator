@@ -259,8 +259,3 @@ template <bool EnableStats> constexpr void Stack<EnableStats>::statDealloc() noe
 }
 
 } // namespace StackPro
-
-/// @brief Short alias so this library can be used as `rain::Stack`, while
-/// its true namespace (and all internal diagnostics) remains `StackPro`.
-/// See StackScope.h for the same alias applied to `rain::StackScope`.
-namespace rain = StackPro;

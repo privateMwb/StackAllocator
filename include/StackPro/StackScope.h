@@ -48,8 +48,3 @@ template <bool EnableStats = false> class [[nodiscard]] StackScope {
 };
 
 } // namespace StackPro
-
-/// @brief Short alias so this library can be used as `rain::StackScope`,
-/// while its true namespace (and all internal diagnostics) remains
-/// `StackPro`. See Stack.h for the same alias applied to `rain::Stack`.
-namespace rain = StackPro;

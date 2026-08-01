@@ -233,9 +233,18 @@ template <bool EnableStats = false> class Stack {
 
 } // namespace StackPro
 
-/// @brief Short alias so this library can be used as `rain::Stack`, while
-/// its true namespace (and all internal diagnostics) remains `StackPro`.
-/// See StackScope.h for the same alias applied to `rain::StackScope`.
-namespace rain = StackPro;
+/// @brief Umbrella alias so this library's types are reachable as
+/// `rain::Stack`, alongside every other project library, while its true
+/// namespace (and all internal diagnostics) remains `StackPro`. Reopens
+/// `rain` rather than aliasing it, since multiple libraries each contribute
+/// their own names into the same `rain` namespace -- an alias
+/// (`namespace rain = StackPro;`) can only ever bind to one target and
+/// collides the moment a second library declares its own `rain` alias to
+/// something else. Declared here only, if StackScope.h includes this
+/// header directly -- confirm against StackScope.h's own includes before
+/// removing its declaration.
+namespace rain {
+using namespace StackPro;
+}
 
 #include "Stack.tpp"
