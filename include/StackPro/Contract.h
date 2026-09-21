@@ -1,11 +1,17 @@
 /**
- * @file Contract.h
- * @brief Contract macros and compiler attributes shared across StackPro.
+ * @file            Contract.h
  *
- * Documents function preconditions, postconditions, and invariants via
- * macros that map to `assert()` by default, plus small compiler-attribute
- * wrappers used for portability. This header defines no namespace — its
- * macros are meant to be used unqualified throughout the library.
+ * @date            2026-07-30
+ *
+ * @version         1.0.0
+ *
+ * @copyright       Copyright (c) 2026 privateMwb
+ *                  All rights reserved.
+ *                  https://github.com/privateMwb/StackAllocator
+ *
+ * @attention       This source is released under the MIT license
+ *                  SPDX-License-Identifier: MIT
+ *                  <http://opensource.org/licenses/MIT>
  */
 
 #pragma once
