@@ -1,11 +1,18 @@
-# StackAllocator
-
 <p align="center">
-  <img src="https://img.shields.io/github/v/release/privateMwb/StackAllocator?style=for-the-badge&logo=github&color=yellow" alt="Version">
-  <img src="https://img.shields.io/badge/License-MIT-orange?style=for-the-badge" alt="License - MIT">
-  <img src="https://img.shields.io/badge/C%2B%2B-20-blue?style=for-the-badge&logo=c%2B%2B" alt="C++ - 20">
+  <img src=".github/assets/banner.svg" alt="StackAllocator" width="100%">
 </p>
 
+<p align="center">
+  <img src="https://img.shields.io/github/v/release/privateMwb/StackAllocator?style=for-the-badge&logo=github&color=65A30D&labelColor=080D03" alt="Version">
+  <img src="https://img.shields.io/badge/License-MIT-84CC16?style=for-the-badge&labelColor=080D03" alt="License - MIT">
+  <img src="https://img.shields.io/badge/C%2B%2B-20-BEF264?style=for-the-badge&logo=c%2B%2B&labelColor=080D03" alt="C++ - 20">
+</p>
+
+<p align="center">
+  <img src=".github/assets/divider.svg" alt="" width="100%">
+</p>
+
+<p align="center"><sub><b>CI / CD</b></sub></p>
 <p align="center">
   <a href="https://github.com/privateMwb/StackAllocator/actions/workflows/build.yml">
     <img src="https://github.com/privateMwb/StackAllocator/actions/workflows/build.yml/badge.svg" alt="Build and Test">
@@ -13,6 +20,16 @@
   <a href="https://github.com/privateMwb/StackAllocator/actions/workflows/benchmark.yml">
     <img src="https://github.com/privateMwb/StackAllocator/actions/workflows/benchmark.yml/badge.svg" alt="Benchmarks">
   </a>
+  <a href="https://github.com/privateMwb/StackAllocator/actions/workflows/packaging.yml">
+    <img src="https://github.com/privateMwb/StackAllocator/actions/workflows/packaging.yml/badge.svg" alt="Packaging">
+  </a>
+  <a href="https://github.com/privateMwb/StackAllocator/actions/workflows/release.yml">
+    <img src="https://github.com/privateMwb/StackAllocator/actions/workflows/release.yml/badge.svg" alt="Release">
+  </a>
+</p>
+
+<p align="center"><sub><b>Code Quality &amp; Safety</b></sub></p>
+<p align="center">
   <a href="https://github.com/privateMwb/StackAllocator/actions/workflows/coverage.yml">
     <img src="https://github.com/privateMwb/StackAllocator/actions/workflows/coverage.yml/badge.svg" alt="Coverage">
   </a>
@@ -25,17 +42,29 @@
   <a href="https://github.com/privateMwb/StackAllocator/actions/workflows/clang-format.yml">
     <img src="https://github.com/privateMwb/StackAllocator/actions/workflows/clang-format.yml/badge.svg" alt="Clang Format">
   </a>
-  <a href="https://github.com/privateMwb/StackAllocator/actions/workflows/docs.yml">
-    <img src="https://github.com/privateMwb/StackAllocator/actions/workflows/docs.yml/badge.svg" alt="Documentation">
+  <a href="https://github.com/privateMwb/StackAllocator/actions/workflows/codeql.yml">
+    <img src="https://github.com/privateMwb/StackAllocator/actions/workflows/codeql.yml/badge.svg" alt="CodeQL">
   </a>
-  <a href="https://github.com/privateMwb/StackAllocator/actions/workflows/release.yml">
-    <img src="https://github.com/privateMwb/StackAllocator/actions/workflows/release.yml/badge.svg" alt="Release">
+  <a href="https://github.com/privateMwb/StackAllocator/actions/workflows/cflite_pr.yml">
+    <img src="https://github.com/privateMwb/StackAllocator/actions/workflows/cflite_pr.yml/badge.svg" alt="Fuzzing">
   </a>
-  <a href="https://github.com/privateMwb/StackAllocator/actions/workflows/packaging.yml">
-    <img src="https://github.com/privateMwb/StackAllocator/actions/workflows/packaging.yml/badge.svg" alt="Packaging">
+  <a href="https://www.bestpractices.dev/projects/14743">
+    <img src="https://www.bestpractices.dev/projects/14743/badge" alt="OpenSSF Best Practices">
   </a>
 </p>
 
+<p align="center"><sub><b>Documentation</b></sub></p>
+<p align="center">
+  <a href="https://github.com/privateMwb/StackAllocator/actions/workflows/docs.yml">
+    <img src="https://github.com/privateMwb/StackAllocator/actions/workflows/docs.yml/badge.svg" alt="Documentation">
+  </a>
+</p>
+
+<p align="center">
+  <img src=".github/assets/divider.svg" alt="" width="100%">
+</p>
+
+<p align="center"><sub><b>Compiler Support</b></sub></p>
 <p align="center">
   <img src="https://img.shields.io/badge/GCC-support-B46F1B?style=flat&logo=gnu" alt="GCC - support">
   <img src="https://img.shields.io/badge/Clang-support-045891?style=flat&logo=llvm" alt="Clang - support">
@@ -43,7 +72,13 @@
   <img src="https://img.shields.io/badge/AppleClang-support-000000?style=flat&logo=apple" alt="AppleClang - support">
 </p>
 
-StackAllocator is a header-only, fixed-capacity bump-pointer stack allocator for modern C++ — O(1) `allocate()`/`create()`, a single buffer allocated once at construction instead of per-allocation heap traffic, and marker-based, LIFO rollback via `StackScope` instead of tracking and freeing objects one at a time.
+<p align="center">
+  <img src=".github/assets/divider.svg" alt="" width="100%">
+</p>
+
+<p align="center">StackAllocator is a header-only, fixed-capacity, bump-pointer stack allocator for modern C++ — O(1) allocation, marker-based rollback with an RAII <code>StackScope</code>, alignment-aware allocation, and optional zero-cost statistics, so you only pay for the parts you actually use.</p>
+
+<br>
 
 ## 📑 Table of Contents
 
@@ -54,24 +89,32 @@ StackAllocator is a header-only, fixed-capacity bump-pointer stack allocator for
 - [Project Structure](#project-structure)
 - [Development](#development)
 - [Benchmarks](#benchmarks)
+- [Fuzzing](#fuzzing)
 - [Documentation](#documentation)
 - [Contributing](#contributing)
 - [Changelog](#changelog)
+- [Security](#security)
 - [License](#license)
+
+<br>
 
 ## <a id="features"></a>✨ Features
 
-- **Single upfront buffer, bump-pointer allocation** — the whole stack is allocated once at construction; `allocate()`/`create<T>()` are just a few arithmetic operations advancing an offset, so steady-state allocation never touches the heap again.
-- **Marker-based rollback via `StackScope`** — `getMarker()` captures a checkpoint and `freeToMarker()` rolls back to it, with no fixed nesting-depth limit; `StackScope` wraps that in RAII so scratch allocations are automatically reclaimed — even when an exception unwinds through the scope — without freeing anything individually.
-- **In-place construction and destruction** — `create<T>()` forwards its arguments directly into `T`'s constructor inside the stack; `destroy()` runs `T`'s destructor without moving the offset, since the stack reclaims space in bulk (`freeToMarker()`/`reset()`), not per object.
-- **Alignment-aware, contract-based API** — `allocate()` honors an explicit alignment, including over-aligned types, bounded by a per-instance ceiling set at construction, and preconditions across the API are documented and enforced via assert-based contracts, consistent everywhere rather than mixed error-handling styles.
-- **Pointer provenance checks** — `owns()` answers whether a given pointer falls within a specific stack's buffer, useful for validating input at a subsystem boundary without trusting callers to tag their pointers correctly.
-- **Optional, zero-cost statistics** — a compile-time `EnableStats` flag adds allocation/usage tracking (`getStats()`) with zero overhead when disabled.
+- **O(1) bump-pointer allocation** — `allocate()` rounds the current offset up to the requested alignment, bounds-checks it, and bumps it. There is no per-allocation header and no free list. Exhaustion is a plain `nullptr` return — no exceptions, no reallocation — and the bounds check is subtraction-based, so sizes close to `SIZE_MAX` can't overflow it.
+- **Marker-based rollback and an RAII `StackScope`** — `getMarker()`/`freeToMarker()` reclaim an entire batch of allocations in O(1), with no fixed nesting-depth limit. `StackScope` captures a marker on construction and restores it on destruction, so rollback is automatic and exception-safe. `reset()` reclaims the whole buffer in O(1).
+- **Alignment-aware allocation** — every `Stack` has a per-instance alignment ceiling set at construction, and each `allocate()`/`create()` call may request any power-of-two alignment up to it, over-aligned types included. Alignment is resolved with bit-shift arithmetic rather than a general modulo/division path.
+- **Zero-cost optional statistics** — enable them with `Stack<true>` to track total bytes allocated, current and peak usage, and allocation count via `getStats()`. With statistics disabled (the default), the storage is `[[no_unique_address]]` and every update compiles away, so a plain `Stack` carries no bookkeeping at all.
+- **In-place object lifecycle** — `create<T>()` allocates storage aligned to `alignof(T)` and constructs a `T` in it; `destroy()` runs `~T()` without reclaiming the storage, which is only returned by `freeToMarker()` or `reset()`. If a constructor throws, the exception propagates and the stack's state stays consistent.
+- **Contract-checked, ownership-aware API** — `AP_PRE`/`AP_POST`/`AP_INVARIANT`/`AP_ASSERT` document and enforce preconditions through `assert()` (replaceable globally, and no-ops under `NDEBUG`). `owns()` validates a pointer against a specific allocator instance with a single range check, and a moved-from `Stack` is left empty and reusable.
+
+<div align="right"><a href="#-table-of-contents"><img src=".github/assets/back-to-top.svg" alt="Back to top" height="28"></a></div>
 
 ## <a id="requirements"></a>📋 Requirements
 
 - A C++20-conformant compiler (tested: GCC, Clang, MSVC, AppleClang)
 - CMake 3.20+
+
+<div align="right"><a href="#-table-of-contents"><img src=".github/assets/back-to-top.svg" alt="Back to top" height="28"></a></div>
 
 ## <a id="installation"></a>📦 Installation
 
@@ -100,47 +143,66 @@ target_link_libraries(your_target PRIVATE StackPro::StackPro)
 > but not yet published to the public registries. This section will be
 > updated once they are.
 
+<div align="right"><a href="#-table-of-contents"><img src=".github/assets/back-to-top.svg" alt="Back to top" height="28"></a></div>
+
 ## <a id="quick-start"></a>🚀 Quick Start
 
 ```cpp
 #include <StackPro/Stack.h>
 
 int main() {
-    StackPro::Stack<> stack(1024);
+    StackPro::Stack<> stack(64 * 1024); // one 64 KiB buffer, allocated up front
 
-    std::byte* raw = stack.allocate(64);         // raw bytes
-    auto* widget = stack.create<Widget>(1, 2);   // constructed in place
+    std::byte* bytes = stack.allocate(256); // nullptr if the buffer is exhausted
+    int* answer = stack.create<int>(42);    // constructed in place
 
-    stack.destroy(widget); // runs ~Widget(); storage stays reserved
+    if (bytes && answer) {
+        // ... use them ...
+    }
+
+    stack.destroy(answer); // runs ~int(); the storage stays reserved
+    stack.reset();         // reclaim everything in O(1)
 }
 ```
 
-Scratch work scoped to a single call, rolled back automatically:
+Rolling back with markers and `StackScope`:
 
 ```cpp
-#include <StackPro/Stack.h>
 #include <StackPro/StackScope.h>
 
-void process(StackPro::Stack<>& stack) {
-    StackPro::StackScope scope(stack); // captures a marker
+StackPro::Stack<> stack(4096);
 
-    stack.allocate(256); // scratch space for this call only
-    // ... rolls back automatically when scope goes out of scope,
-    // even if an exception unwinds through it
+const auto marker = stack.getMarker();
+std::byte* a = stack.allocate(128);
+std::byte* b = stack.allocate(256);
+stack.freeToMarker(marker); // both blocks reclaimed in O(1)
+
+{
+    StackPro::StackScope<> scope(stack);
+    std::byte* scratch = stack.allocate(512);
+    // ... use scratch ...
+} // everything allocated inside the scope is rolled back here
+```
+
+Statistics, a custom buffer alignment, and ownership checks:
+
+```cpp
+StackPro::Stack<true> stack(1024, /*alignment=*/64);
+
+std::byte* p = stack.allocate(100, /*request_alignment=*/64);
+
+if (p && stack.owns(p)) {
+    const auto& stats = stack.getStats();
+    std::cout << "used " << stats.currentUsed_ << ", peak " << stats.peakUsed_
+              << ", allocations " << stats.allocations_ << '\n';
+}
+
+if (!stack.allocate(4096)) {
+    std::cerr << "out of capacity\n"; // exhaustion is a nullptr, not an exception
 }
 ```
 
-Tracking usage with statistics enabled:
-
-```cpp
-StackPro::Stack<true> stack(4096); // EnableStats = true
-
-stack.allocate(128);
-
-const auto& stats = stack.getStats();
-std::cout << stats.allocations_ << " allocations, "
-          << stats.peakUsed_ << " bytes at peak\n";
-```
+<div align="right"><a href="#-table-of-contents"><img src=".github/assets/back-to-top.svg" alt="Back to top" height="28"></a></div>
 
 ## <a id="project-structure"></a>🗂️ Project Structure
 
@@ -154,44 +216,58 @@ StackAllocator/
 │       └── Contract.h
 │
 ├── tests/
-│   ├── support/
-│   ├── suite/
-│   ├── test_main.cpp
-│   └── CMakeLists.txt
+│   ├── custom/
+│   ├── google/
+│   ├── CMakeLists.txt
+│   └── README.md
 │
 ├── benchmarks/
-│   ├── support/
-│   ├── suite/
 │   ├── baselines/
-│   ├── bench_main.cpp
-│   └── CMakeLists.txt
+│   ├── custom/
+│   ├── google/
+│   ├── results/
+│   ├── CMakeLists.txt
+│   └── README.md
 │
 ├── examples/
 │   ├── support/
 │   ├── suite/
 │   ├── example_main.cpp
-│   └── CMakeLists.txt
+│   ├── CMakeLists.txt
+│   └── README.md
 │
 ├── regression/
-│   ├── support/
-│   ├── regression_main.cpp
-│   └── CMakeLists.txt
+│   ├── custom/
+│   ├── google/
+│   ├── results/
+│   ├── CMakeLists.txt
+│   └── README.md
+│
+├── fuzz/
+│   └── fuzz_stack.cpp
+│
+├── .clusterfuzzlite/
+│   ├── Dockerfile
+│   ├── build.sh
+│   └── project.yaml
 │
 ├── packaging/
 │   ├── README.md
+│   ├── requirements.in
+│   ├── requirements.txt
 │   ├── recipes/
-│   │   └── stackpro/
 │   ├── vcpkg/
-│   │   └── ports/
-│   │       └── stackpro/
 │   └── vcpkg-smoke-test/
 │
 ├── scripts/
 │   └── update_package_files.py
 │
 ├── .github/
+│   ├── assets/
 │   ├── releases/
-│   └── workflows/
+│   ├── workflows/
+│   ├── CODEOWNERS
+│   └── dependabot.yml
 │
 ├── cmake/
 │   └── StackProConfig.cmake.in
@@ -200,16 +276,24 @@ StackAllocator/
 │   ├── Doxyfile
 │   └── README.md
 │
+├── .clang-format
+├── .clang-tidy
 ├── .gitignore
 ├── CMakeLists.txt
 ├── README.md
+├── CONTRIBUTING.md
+├── CHANGELOG.md
+├── SECURITY.md
+├── FUZZING.md
 └── LICENSE
 ```
+
+<div align="right"><a href="#-table-of-contents"><img src=".github/assets/back-to-top.svg" alt="Back to top" height="28"></a></div>
 
 ## <a id="development"></a>🛠️ Development
 
 The from-source install above builds the library only. To work on
-StackPro itself — running tests, benchmarks, or the regression tool —
+StackAllocator itself — running tests, benchmarks, or the regression tool —
 build with everything enabled (the default):
 
 ```bash
@@ -239,11 +323,18 @@ auto-names its output (`regression_v1.2.0_vs_current.md`/`.json`, etc.).
 See [packaging/README.md](packaging/README.md) for notes on verifying the vcpkg
 port and Conan recipe locally.
 
+<div align="right"><a href="#-table-of-contents"><img src=".github/assets/back-to-top.svg" alt="Back to top" height="28"></a></div>
+
 ## <a id="benchmarks"></a>📊 Benchmarks
 
-Measured against `stdStack` (a naive, dynamically-growing baseline),
-same build, at 10K / 100K / 1M iterations (`benchmarks/baselines/v1.0.0.json`
-has the full dataset).
+Measured against `stdStack` (a naive, dynamically-growing baseline), same
+build, at 10K / 100K / 1M iterations (`benchmarks/baselines/v1.0.0.json` has
+the full dataset).
+
+*Environment: 4-core CI runner @ 3.26 GHz, 32 KiB L1 / 512 KiB L2 / 32 MiB
+L3, Release build — see the `context` block in
+`benchmarks/baselines/v1.0.0.json` for the exact machine and library
+version each run was captured on.*
 
 | Operation | StackPro (1M) | stdStack (1M) | Δ |
 |---|---|---|---|
@@ -258,24 +349,40 @@ has the full dataset).
 | `Create<T>() Non-trivial Ctor` | 2.51 ms | 3.37 ms | +33.9% |
 | `Destroy<T>() Non-trivial Dtor` | 639.55 us | 647.51 us | +1.2% |
 | `Destroy<T>() Trivial Dtor` | 308.33 us | 308.31 us | -0.0% |
-| `Construction` | 29.96 ms | 7.48 ms | -75.0% |
+| Construction | 29.96 ms | 7.48 ms | -75.0% |
 
 StackPro's fixed-buffer, bump-pointer design pays off most on the
-exhaustion path (a bounds check and a `nullptr` return versus
-`stdStack` actually reallocating and copying), large or over-aligned
-buffers, and bulk churn (`Reset()` + refill), where `stdStack`'s
-per-call bookkeeping and growth strategy show up directly. The
-alignment and capacity-growth results are the most dramatic:
-`stdStack`'s cost scales with buffer size and requested alignment,
-while StackPro's stays flat regardless of either, since it never
-reallocates.
+exhaustion path (a bounds check and a `nullptr` return versus `stdStack`
+actually reallocating and copying), large or over-aligned allocations, and
+bulk churn (`Reset()` + refill) — `stdStack`'s cost scales with buffer size
+and requested alignment, while StackPro's stays flat regardless of either,
+since it never reallocates.
 
-The trade-off: the buffer is allocated once, eagerly and aligned, at
-construction — so `Construction` is consistently slower than
-`stdStack`'s lazy setup. `Destroy()` is roughly a wash either way,
-since both implementations ultimately just run the same destructor;
-StackPro adds nothing on top of that, but it doesn't reclaim anything
-faster either.
+The trade-off is concentrated in one spot: the buffer is allocated once,
+eagerly and aligned, at construction, so `Construction` is consistently
+slower than `stdStack`'s lazy setup. `Destroy()` is roughly a wash either
+way, since both implementations ultimately just run the same destructor.
+
+<div align="right"><a href="#-table-of-contents"><img src=".github/assets/back-to-top.svg" alt="Back to top" height="28"></a></div>
+
+## <a id="fuzzing"></a>🐛 Fuzzing
+
+`Stack` and `StackScope` are continuously fuzzed via
+[ClusterFuzzLite](https://google.github.io/clusterfuzzlite/):
+model-based testing against an independent shadow model, under
+AddressSanitizer and UndefinedBehaviorSanitizer. A short pass runs on
+every PR touching `Stack`'s implementation; a longer pass runs
+nightly.
+
+This covers capacity boundaries (exact-fit, one-over, and near-`SIZE_MAX`
+requests), alignment padding, marker rollback and `StackScope` (including
+nested scopes), `reset()`, `create<T>()`/`destroy()`, and move semantics
+including self-move. Constructor failure paths (`std::bad_alloc`), a `T`
+whose constructor throws inside `create()`, and deliberate contract
+violations aren't covered yet — see [FUZZING.md](FUZZING.md) for full
+scope, running locally, and reproducing a failing input.
+
+<div align="right"><a href="#-table-of-contents"><img src=".github/assets/back-to-top.svg" alt="Back to top" height="28"></a></div>
 
 ## <a id="documentation"></a>📖 Documentation
 
@@ -283,19 +390,44 @@ Full API reference, generated with Doxygen from `docs/Doxyfile`:
 
 **https://privateMwb.github.io/StackAllocator/**
 
+<div align="right"><a href="#-table-of-contents"><img src=".github/assets/back-to-top.svg" alt="Back to top" height="28"></a></div>
+
 ## <a id="contributing"></a>🤝 Contributing
 
-Issues and pull requests are welcome. Before submitting a PR:
+Issues and pull requests are welcome — see [CONTRIBUTING.md](CONTRIBUTING.md)
+for the full process, coding standard reference, and what CI checks on
+every PR. Short version, before submitting:
 
 - Run the test suite (`ctest --test-dir build`)
 - If you're changing a hot path, run `./build/regression` and mention
   the results in your PR description
 
+<div align="right"><a href="#-table-of-contents"><img src=".github/assets/back-to-top.svg" alt="Back to top" height="28"></a></div>
+
 ## <a id="changelog"></a>📝 Changelog
 
-See the [Releases](https://github.com/privateMwb/StackAllocator/releases)
-page for version history and release notes.
+See [CHANGELOG.md](CHANGELOG.md) for a curated, per-release summary of
+changes, or the [Releases](https://github.com/privateMwb/StackAllocator/releases)
+page for the full release notes.
+
+<div align="right"><a href="#-table-of-contents"><img src=".github/assets/back-to-top.svg" alt="Back to top" height="28"></a></div>
+
+## <a id="security"></a>🔒 Security
+
+See [SECURITY.md](SECURITY.md) for the supported versions, how to report
+a vulnerability (including privately, via GitHub Security Advisories),
+and the disclosure timeline.
+
+<div align="right"><a href="#-table-of-contents"><img src=".github/assets/back-to-top.svg" alt="Back to top" height="28"></a></div>
 
 ## <a id="license"></a>📄 License
 
 MIT — see [LICENSE](LICENSE) for details.
+
+<p align="center">
+  <sub>Built with C++20</sub>
+</p>
+
+<p align="center">
+  <a href="#-table-of-contents"><img src=".github/assets/back-to-top.svg" alt="Back to top" height="28"></a>
+</p>

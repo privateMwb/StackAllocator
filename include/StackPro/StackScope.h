@@ -1,9 +1,17 @@
 /**
- * @file StackScope.h
- * @brief RAII scope guard for StackPro::Stack.
+ * @file            StackScope.h
  *
- * Contains the StackScope helper, which restores a Stack allocator to a
- * previously captured marker when the scope is left.
+ * @date            2026-07-30
+ *
+ * @version         1.0.0
+ *
+ * @copyright       Copyright (c) 2026 privateMwb
+ *                  All rights reserved.
+ *                  https://github.com/privateMwb/StackAllocator
+ *
+ * @attention       This source is released under the MIT license
+ *                  SPDX-License-Identifier: MIT
+ *                  <http://opensource.org/licenses/MIT>
  */
 
 #pragma once
